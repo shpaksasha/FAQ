@@ -7,7 +7,7 @@ const Home = () => {
           <Tab.Container defaultActiveKey='first'>
               <Row>
                   <Col sm={8}>
-                      <h3>Актуальные новости</h3>
+                      <h3>Актуальные новостииии</h3>
                       <Nav variant='pills' className='flex-column mt-4 justify-content-center'>
                           <Nav.Item>
                               <Nav.Link eventKey='first'>Лион - Ювентус: букмекеры ожидают победу гостей и голы от Роналду</Nav.Link>
