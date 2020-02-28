@@ -2,7 +2,6 @@ import React from 'react';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Divider from "@material-ui/core/Divider";
 import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "@material-ui/core";
 
@@ -23,7 +22,7 @@ const Questions = () =>{
    const classes = useStyles();
     return(
         <List component="div" className={classes.root} aria-label="mailbox folders">
-            <Link className={classes.links} href='#' color='black' underline='none' >
+            <Link className={classes.links} href='/faq/article_1' color='black' underline='none' >
             <ListItem  divider>
                 <ListItemText primary="Лион помешал Роналду продлить голевую серию с начала 2020 года" />
             </ListItem>
