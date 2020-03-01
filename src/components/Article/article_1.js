@@ -8,15 +8,14 @@ import Ron from "../NewsBlock/news_1";
 const db = firebase.firestore();
 
 
-const useStyles = makeStyles(theme => ({
-
-}));
+const useStyles = makeStyles(theme => ({}));
 
 const One = () => {
     const classes = useStyles();
     const [key, setKey] = useState('article');
 
     const [item, setItem] = useState();
+
     async function fetchData() {
         await db.collection('content').get().then(snapshot => {
             const items = snapshot.docs.map(doc => {
@@ -25,6 +24,7 @@ const One = () => {
             setItem(items)
         })
     }
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -32,15 +32,15 @@ const One = () => {
     return (
         <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
             <Tab eventKey="article" title="Article">
-                <Ron />
+                <Ron/>
             </Tab>
 
             <Tab eventKey="formatting" title="Formatting">
-<Container maxWidth='md' component='div' fixed>
-    <FormControl>
-    <TextareaAutosize aria-label="minimum height" rowsMin={15} placeholder="description"/>
-    </FormControl>
-</Container>
+                <Container maxWidth='md' component='div' fixed>
+                    <FormControl>
+                        <TextareaAutosize aria-label="minimum height" rowsMin={15} placeholder="description"/>
+                    </FormControl>
+                </Container>
             </Tab>
         </Tabs>
     );
