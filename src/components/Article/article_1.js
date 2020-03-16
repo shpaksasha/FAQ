@@ -3,7 +3,7 @@ import {Container, FormControl, TextareaAutosize} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Tab, Tabs} from 'react-bootstrap';
 import firebase from '../Firebase/firebase';
-import Ron from "../NewsBlock/news_1";
+import News from "../NewsBlock/news_1";
 
 const db = firebase.firestore();
 
@@ -32,7 +32,7 @@ const One = () => {
     return (
         <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
             <Tab eventKey="article" title="Article">
-                <Ron/>
+                <News/>
             </Tab>
 
             <Tab eventKey="formatting" title="Formatting">

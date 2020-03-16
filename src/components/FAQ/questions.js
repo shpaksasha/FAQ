@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import {makeStyles} from "@material-ui/core/styles";
-import {Container, Link} from "@material-ui/core";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import {Container, Link} from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import {dark} from "@material-ui/core/styles/createPalette";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -13,6 +13,14 @@ const useStyles = makeStyles(theme => ({
         minWidth: 'auto',
         maxWidth: '800px',
         backgroundColor: theme.palette.background.paper,
+    },
+    loading: {
+        display: 'flex',
+        position: 'relative',
+        margin: '0 auto',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '350px',
     }
 
 }));
@@ -52,7 +60,11 @@ const Questions = () => {
                 date: '15/1/2011',
                 id: "some-id-3"
             },
-            {header: 'Бенфика - Шахтер: онлайн трансляция матча 1/16 Лиги Европы', date: '16/1/2011', id: "some-id-4"},
+            {
+                header: 'Бенфика - Шахтер: онлайн трансляция матча 1/16 Лиги Европы',
+                date: '16/1/2011',
+                id: "some-id-4"
+            },
         ];
 
         return delay(1000).then(() => Promise.resolve(list))
@@ -104,8 +116,8 @@ const Questions = () => {
 
     function renderLoading() {
         return (
-            <Container maxWidth='md' component='div' fixed>
-                <CircularProgress/>
+            <Container maxWidth='md' component='div' fixed className={classes.loading}>
+                <CircularProgress size={57}/>
             </Container>
         )
     }

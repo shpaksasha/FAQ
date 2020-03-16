@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const Ron = () =>{
+const News = () =>{
     const classes = useStyles();
     return(
         <Container maxWidth='md' component='div' fixed className={classes.block} id='text'>
@@ -49,4 +49,4 @@ const Ron = () =>{
     )
 };
 
-export default Ron;
+export default News;

@@ -4,13 +4,18 @@ import {Tab, Tabs} from "react-bootstrap";
 import {Container, Typography} from "@material-ui/core";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         margin: '50px 10px',
         width: '100%',
         minWidth: 'auto',
         maxWidth: '800px',
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: 'theme.palette.background.paper'
+    },
+    area: {
+
+        margin: '300px auto'
     }
 
 }));
@@ -43,16 +48,19 @@ const Article = (props) => {
     return (
         <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
             <Tab eventKey="view" title="View">
-                <Container maxWidth='md' component='div' fixed className={classes.block}>
+                <Container maxWidth='md' component='div' fixed className={classes.root}>
                     {article}
                 </Container>
             </Tab>
             <Tab eventKey="edit" title="Edit">
                 <TextareaAutosize
+                    cols='30'
+                    rows='10'
                     aria-label="empty textarea"
                     placeholder="Empty"
                     value={article}
                     onChange={event => onTextChange(event)}
+                    className={classes.area}
                 />
             </Tab>
         </Tabs>
@@ -60,4 +68,4 @@ const Article = (props) => {
 
 };
 
-export default Article
+export default Article;

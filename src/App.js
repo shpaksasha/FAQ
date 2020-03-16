@@ -5,7 +5,7 @@ import Home from './components/Home/home';
 import Questions from './components/FAQ/questions';
 import One from './components/Article/article_1';
 import Two from './components/Article/article_2';
-import Article from "./components/Article/article";
+import Article from './components/Article/article';
 
 const App = () => {
     return (
@@ -13,8 +13,8 @@ const App = () => {
             <Head/>
             <Route exact path='/' component={Home}/>
             <Route exact path='/faq' component={Questions}/>
-            <Route exact path='/faq/article_1' component={One}/>
-            <Route exact path='/faq/article_2' component={Two}/>
+            {/*<Route exact path='/faq/article_1' component={One}/>*/}
+            {/*<Route exact path='/faq/article_2' component={Two}/>*/}
             <Route exact path="/faq/article/:id" render={(props) => <Article {...props} />}/>
         </Router>
     );
