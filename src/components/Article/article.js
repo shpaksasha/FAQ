@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Tab, Tabs} from "react-bootstrap";
-import {Container, Typography} from "@material-ui/core";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import {Container, TextareaAutosize, CircularProgress} from "@material-ui/core";
 
 
 const useStyles = makeStyles(theme => ({
@@ -14,10 +13,16 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'theme.palette.background.paper'
     },
     area: {
-
         margin: '300px auto'
+    },
+    loading: {
+        display: 'flex',
+        position: 'relative',
+        margin: '0 auto',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '350px',
     }
-
 }));
 
 
@@ -26,6 +31,7 @@ const Article = (props) => {
     const classes = useStyles();
     const [key, setKey] = useState('view');
     const [article, setArticle] = useState();
+
 
     function downloadArticle(id) {
         return "**Hello**. This is article " + id;
@@ -41,31 +47,58 @@ const Article = (props) => {
         fetchArticle()
     }, []);
 
+
     function onTextChange(event) {
         setArticle(event.target.value);
     }
 
-    return (
-        <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
-            <Tab eventKey="view" title="View">
-                <Container maxWidth='md' component='div' fixed className={classes.root}>
-                    {article}
-                </Container>
-            </Tab>
-            <Tab eventKey="edit" title="Edit">
-                <TextareaAutosize
-                    cols='30'
-                    rows='10'
-                    aria-label="empty textarea"
-                    placeholder="Empty"
-                    value={article}
-                    onChange={event => onTextChange(event)}
-                    className={classes.area}
-                />
-            </Tab>
-        </Tabs>
-    );
+    if (article) {
+        return EditList(article);
+    } else {
+        return renderLoading();
+    }
 
+    return delay(1000).then(() => Promise.resolve(article));
+
+    async function delay(delayInms) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(2);
+            }, delayInms);
+        });
+    }
+
+    function EditList() {
+        return (
+            <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
+                <Tab eventKey="view" title="View">
+                    <Container maxWidth='md' component='div' fixed className={classes.root}>
+                        {article}
+                    </Container>
+                </Tab>
+                <Tab eventKey="edit" title="Edit">
+                    <TextareaAutosize
+                        cols='30'
+                        rows='10'
+                        aria-label="empty textarea"
+                        placeholder="Empty"
+                        value={article}
+                        onChange={event => onTextChange(event)}
+                        className={classes.area}
+                    />
+                </Tab>
+            </Tabs>
+        );
+    }
+
+
+    function renderLoading() {
+        return (
+            <Container maxWidth='md' component='div' fixed className={classes.loading}>
+                <CircularProgress size={57}/>
+            </Container>
+        )
+    }
 };
 
 export default Article;

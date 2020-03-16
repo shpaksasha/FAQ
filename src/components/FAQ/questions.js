@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import {makeStyles} from "@material-ui/core/styles";
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import {makeStyles} from '@material-ui/core/styles';
 import {Container, Link} from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {dark} from "@material-ui/core/styles/createPalette";
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -88,13 +88,6 @@ const Questions = () => {
 
         setItems(data);
 
-
-        // await db.collection('content').get().then(snapshot => {
-        //     const items = snapshot.docs.map(doc => {
-        //         return doc.data().input
-        //     });
-        //     setItem(items)
-        // })
     }
 
 
