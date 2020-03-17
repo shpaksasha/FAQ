@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Tab, Tabs} from "react-bootstrap";
 import {Container, TextareaAutosize, CircularProgress} from "@material-ui/core";
-
+import Markdown from 'react-textarea-markdown';
+import ReactMarkdown from "react-markdown";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -34,6 +35,9 @@ const Article = (props) => {
 
 
     function downloadArticle(id) {
+        // const newItem = setArticle.map((value)=>{
+        //     return <ReactMarkdown source={value} escapeHtml={false}/>
+        // });
         return "**Hello**. This is article " + id;
     }
 
@@ -45,30 +49,13 @@ const Article = (props) => {
 
     useEffect(() => {
         fetchArticle()
-    }, []);
+    }, [setArticle]);
 
 
     function onTextChange(event) {
         setArticle(event.target.value);
     }
 
-    if (article) {
-        return EditList(article);
-    } else {
-        return renderLoading();
-    }
-
-    return delay(1000).then(() => Promise.resolve(article));
-
-    async function delay(delayInms) {
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(2);
-            }, delayInms);
-        });
-    }
-
-    function EditList() {
         return (
             <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
                 <Tab eventKey="view" title="View">
@@ -86,19 +73,10 @@ const Article = (props) => {
                         onChange={event => onTextChange(event)}
                         className={classes.area}
                     />
+                    {/*<Markdown textarea={true} Width={[0,100]} value={article} placeholder="Empty" onChange={event => onTextChange(event)} className={classes.area}/>*/}
                 </Tab>
             </Tabs>
         );
-    }
-
-
-    function renderLoading() {
-        return (
-            <Container maxWidth='md' component='div' fixed className={classes.loading}>
-                <CircularProgress size={57}/>
-            </Container>
-        )
-    }
 };
 
 export default Article;
