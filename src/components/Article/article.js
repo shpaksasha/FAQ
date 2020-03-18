@@ -5,6 +5,7 @@ import {Container, TextareaAutosize, CircularProgress} from "@material-ui/core";
 import Markdown from 'react-textarea-markdown';
 import ReactMarkdown from "react-markdown";
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         margin: '50px 10px',
@@ -14,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'theme.palette.background.paper'
     },
     area: {
-        margin: '300px auto'
+        margin: '100px 500px'
     },
     loading: {
         display: 'flex',
@@ -23,7 +24,18 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '350px',
-    }
+    },
+   submit:{
+        border:'none',
+       backgroundColor: '#1e88e5',
+       color: '#ffffff',
+       padding:'8px',
+       borderRadius: '4px',
+       position:'absolute',
+       display:'inline',
+       top:'425px',
+       right:'920px'
+   }
 }));
 
 
@@ -31,49 +43,62 @@ const Article = (props) => {
 
     const classes = useStyles();
     const [key, setKey] = useState('view');
-    const [article, setArticle] = useState();
+    // const [article, setArticle] = useState();
+const [area, setArea] = useState('');
+const [text, setText]= useState('yt');
 
+    // function downloadArticle(id) {
+    //     // const newItem = setArticle.map((value)=>{
+    //     //     return <ReactMarkdown source={value} escapeHtml={false}/>
+    //     // });
+    //     return "**Hello**. This is article" + id;
+    // }
 
-    function downloadArticle(id) {
-        // const newItem = setArticle.map((value)=>{
-        //     return <ReactMarkdown source={value} escapeHtml={false}/>
-        // });
-        return "**Hello**. This is article " + id;
-    }
+    // function fetchArticle() {
+    //     const id = props.match.params.id;
+    //     const article = downloadArticle(id);
+    //     setArticle(article)
+    // }
 
-    function fetchArticle() {
-        const id = props.match.params.id;
-        const article = downloadArticle(id);
-        setArticle(article)
-    }
+    // useEffect(() => {
+    //     fetchArticle()
+    // }, [setArticle]);
 
-    useEffect(() => {
-        fetchArticle()
-    }, [setArticle]);
+    const addText =(event) =>{
+setText([
+    ...text,
 
+    setArea(event.target.value)
 
-    function onTextChange(event) {
-        setArticle(event.target.value);
-    }
+])};
+
+    
+    // function onTextChange(event) {
+    //         setArea(event.target.value);
+    // }
 
         return (
             <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
                 <Tab eventKey="view" title="View">
                     <Container maxWidth='md' component='div' fixed className={classes.root}>
-                        {article}
+                        {setText}
                     </Container>
                 </Tab>
                 <Tab eventKey="edit" title="Edit">
                     <TextareaAutosize
-                        cols='30'
-                        rows='10'
+                        cols='40'
+                        rows='8'
                         aria-label="empty textarea"
-                        placeholder="Empty"
-                        value={article}
-                        onChange={event => onTextChange(event)}
+                        placeholder="empty textarea"
+                        value={area}
+                        onChange={event => setArea(event.target.value)}
                         className={classes.area}
                     />
-                    {/*<Markdown textarea={true} Width={[0,100]} value={article} placeholder="Empty" onChange={event => onTextChange(event)} className={classes.area}/>*/}
+
+                    <input type='submit'
+                           onClick={addText}
+                           className={classes.submit}
+                           />
                 </Tab>
             </Tabs>
         );
