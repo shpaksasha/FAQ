@@ -63,12 +63,17 @@ const [text, setText]= useState('ReactDOM.render(<ReactMarkdown source={value} e
         localStorage.setItem('area', JSON.stringify(area))
     }, [area]);
 
+    useEffect(()=>{
+        const raw = localStorage.getItem('area') || [];
+        setArea(JSON.parse(raw))
+    }, []);
+
+
     const addText =(event) =>{
 setText([
     ...text,
 
     setArea(event.target.value)
-
 ])};
 
     
