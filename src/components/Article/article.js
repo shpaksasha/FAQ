@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Tab, Tabs} from "react-bootstrap";
-import {Container, TextareaAutosize, CircularProgress} from "@material-ui/core";
-import Markdown from 'react-textarea-markdown';
+import {Container, TextareaAutosize} from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 
 
@@ -45,7 +44,7 @@ const Article = (props) => {
     const [key, setKey] = useState('view');
     // const [article, setArticle] = useState();
 const [area, setArea] = useState('');
-const [text, setText]= useState('yt');
+const [text, setText]= useState('ReactDOM.render(<ReactMarkdown source={value} escapeHtml={false} />)');
 
     // function downloadArticle(id) {
     //     // const newItem = setArticle.map((value)=>{
@@ -60,9 +59,9 @@ const [text, setText]= useState('yt');
     //     setArticle(article)
     // }
 
-    // useEffect(() => {
-    //     fetchArticle()
-    // }, [setArticle]);
+    useEffect(() => {
+        localStorage.setItem('area', JSON.stringify(area))
+    }, [area]);
 
     const addText =(event) =>{
 setText([
