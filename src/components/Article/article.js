@@ -43,7 +43,7 @@ const Article = (props) => {
     const classes = useStyles();
     const [key, setKey] = useState('view');
     // const [article, setArticle] = useState();
-const [area, setArea] = useState('<ReactMarkdown source={value} escapeHtml={false}/>');
+const [area, setArea] = useState('');
 const [text, setText]= useState('');
 
 // const area = downloadArticle();
@@ -73,7 +73,8 @@ const [text, setText]= useState('');
     const addText =(event) =>{
 setText([
     ...text,
-    setArea(event.target.value)
+    // setArea(event.target.value)
+    setArea(<ReactMarkdown source={event.target.value} escapeHtml={false}/>)
 ])};
 
 
