@@ -43,19 +43,20 @@ const Article = (props) => {
     const classes = useStyles();
     const [key, setKey] = useState('view');
     // const [article, setArticle] = useState();
-const [area, setArea] = useState('');
-const [text, setText]= useState('ReactDOM.render(<ReactMarkdown source={value} escapeHtml={false} />)');
+const [area, setArea] = useState('<ReactMarkdown source={value} escapeHtml={false}/>');
+const [text, setText]= useState('');
 
-    // function downloadArticle(id) {
-    //     // const newItem = setArticle.map((value)=>{
-    //     //     return <ReactMarkdown source={value} escapeHtml={false}/>
-    //     // });
-    //     return "**Hello**. This is article" + id;
-    // }
+// const area = downloadArticle();
+//
+//     function downloadArticle() {
+//             return <ReactMarkdown source={value} escapeHtml={false}/>
+//
+//         // return "**Hello**. This is article" + id;
+//     }
 
     // function fetchArticle() {
     //     const id = props.match.params.id;
-    //     const article = downloadArticle(id);
+    //     const artice = downloadArticle(id);
     //     setArticle(article)
     // }
 
@@ -72,11 +73,10 @@ const [text, setText]= useState('ReactDOM.render(<ReactMarkdown source={value} e
     const addText =(event) =>{
 setText([
     ...text,
-
     setArea(event.target.value)
 ])};
 
-    
+
     // function onTextChange(event) {
     //         setArea(event.target.value);
     // }
