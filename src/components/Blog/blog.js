@@ -1,8 +1,8 @@
 import React from 'react';
-import {Container, Row, Col, Media, Card, ListGroup} from "react-bootstrap";
+import {Card, Col, Container, ListGroup, Media, Row} from "react-bootstrap";
 
-const Blog = () =>{
-    return(
+const Blog = () => {
+    return (
         <div>
             <Container>
                 <Row>
@@ -17,7 +17,9 @@ const Blog = () =>{
                             />
                             <Media.Body>
                                 <h5>It is a good trip</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta voluptatibus.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis
+                                    incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta
+                                    voluptatibus.</p>
                             </Media.Body>
                         </Media>
 
@@ -31,7 +33,9 @@ const Blog = () =>{
                             />
                             <Media.Body>
                                 <h5>It is a good trip</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta voluptatibus.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis
+                                    incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta
+                                    voluptatibus.</p>
                             </Media.Body>
                         </Media>
 
@@ -45,7 +49,9 @@ const Blog = () =>{
                             />
                             <Media.Body>
                                 <h5>It is a good trip</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta voluptatibus.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis
+                                    incidunt nostrum reiciendis similique, voluptatem. Minus quasi quos soluta
+                                    voluptatibus.</p>
                             </Media.Body>
                         </Media>
                     </Col>
@@ -65,7 +71,8 @@ const Blog = () =>{
                         <Card className='mt-2' bg='light'>
                             <Card.Body>
                                 <Card.Title>Html viget</Card.Title>
-                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, tenetur.</Card.Text>
+                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
+                                    tenetur.</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>

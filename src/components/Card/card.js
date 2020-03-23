@@ -2,13 +2,11 @@ import React from 'react';
 import {Button, Card, CardDeck, Container} from 'react-bootstrap';
 import {makeStyles} from "@material-ui/core/styles";
 
-const useStyles =makeStyles(theme=>({
-
-}));
+const useStyles = makeStyles(theme => ({}));
 
 
 const News = () => {
-    const classes =useStyles();
+    const classes = useStyles();
 
     return (
         <Container>
