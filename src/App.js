@@ -7,6 +7,8 @@ import One from './components/Article/article_1';
 import Two from './components/Article/article_2';
 import Article from './components/Article/article';
 import News from "./components/Card/card";
+import Content from "./components/Content/content";
+
 
 const App = () => {
     return (
@@ -15,6 +17,7 @@ const App = () => {
             <Route exact path='/' component={Home}/>
             <Route exact path='/faq' component={Questions}/>
             <Route exact path='/card' component={News}/>
+            <Route exact path='/content' component={Content}/>
             {/*<Route exact path='/faq/article_1' component={One}/>*/}
             {/*<Route exact path='/faq/article_2' component={Two}/>*/}
             <Route exact path="/faq/article/:id" render={(props) => <Article {...props} />}/>
