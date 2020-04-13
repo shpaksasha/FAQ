@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Head from "./components/Header/header";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Home from './components/Home/home';
+import Questions from './components/FAQ/questions';
+import One from './components/Article/article_1';
+import Two from './components/Article/article_2';
+import Article from './components/Article/article';
+import News from "./components/Card/card";
+import Content from "./components/Content/content";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    return (
+        <Router>
+            <Head/>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/faq' component={Questions}/>
+            <Route exact path='/card' component={News}/>
+            <Route exact path='/content' component={Content}/>
+            {/*<Route exact path='/faq/article_1' component={One}/>*/}
+            {/*<Route exact path='/faq/article_2' component={Two}/>*/}
+            <Route exact path="/faq/article/:id" render={(props) => <Article {...props} />}/>
+        </Router>
+    );
+};
 
 export default App;
