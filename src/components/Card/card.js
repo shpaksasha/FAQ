@@ -40,7 +40,7 @@ const News = () => {
                               src='https://img.championat.com/s/735x490/news/big/d/h/rashford-trebuet-ot-mju-zarplatu-vyshe-chem-u-pogba_1560698990492807713.jpg'/>
                     <Card.Body>
                         <Card.Title>Manchester United to begin</Card.Title>
-                        <Card.Text>«С учетом переноса Евро-2020 мы можем начать до 10-12 мая чемпионат, доиграть<span id='dots'>...</span><span id={classes.more}> его в
+                        <Card.Text>«С учетом переноса Евро-2020 мы можем начать до 10-12 мая чемпионат, доиграть<span id='dots'>...</span><span id='more'> его в
                             ускоренной форме. Формат соревнований будет тот же, но можно играть не раз в неделю, а через
                             три дня на четвертый или еще больше ускориться. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></Card.Text>
                         <Button variant='primary' onClick={()=>{readMore()}} id='myBtn'>Read more</Button>
