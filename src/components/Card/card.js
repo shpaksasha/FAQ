@@ -4,8 +4,10 @@ import {makeStyles} from "@material-ui/core/styles";
 
 
 const useStyles = makeStyles(theme => ({
-
-
+// cards:{
+//     minHeight:'auto',
+//     maxHeight: '100px'
+// }
 
 }));
 
@@ -64,7 +66,7 @@ const News = () => {
         <Container>
             <h2 className='text-center mt-4'>Football news 24 chanel</h2>
             <CardDeck className='mt-5'>
-                <Card bg='info' border='warning'>
+                <Card className={classes.cards} bg='info' border='warning' >
                     <Card.Img variant='top'
                               src='https://img.championat.com/s/735x490/news/big/d/h/rashford-trebuet-ot-mju-zarplatu-vyshe-chem-u-pogba_1560698990492807713.jpg'/>
                     <Card.Body>
@@ -76,7 +78,7 @@ const News = () => {
                         <Button variant='primary' onClick={readMore} id='myButton_1'>Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card bg='light' text='muted'>
+                <Card bg='light' text='muted' maxWidth='100px'>
                     <Card.Img variant='top'
                               src='https://s.ill.in.ua/i/news/630x373/419/419952.png'/>
                     <Card.Body>
