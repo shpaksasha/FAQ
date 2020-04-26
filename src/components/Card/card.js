@@ -4,10 +4,7 @@ import {makeStyles} from "@material-ui/core/styles";
 
 
 const useStyles = makeStyles(theme => ({
-// cards:{
-//     minHeight:'auto',
-//     maxHeight: '100px'
-// }
+
 
 }));
 
@@ -65,8 +62,8 @@ const News = () => {
     return (
         <Container>
             <h2 className='text-center mt-4'>Football news 24 chanel</h2>
-            <CardDeck className='mt-5'>
-                <Card className={classes.cards} bg='info' border='warning' >
+            <CardDeck  style={{height:'auto'}} className='mt-5'>
+                <Card style={{maxHeight: '35em'}} bg='info' border='warning' >
                     <Card.Img variant='top'
                               src='https://img.championat.com/s/735x490/news/big/d/h/rashford-trebuet-ot-mju-zarplatu-vyshe-chem-u-pogba_1560698990492807713.jpg'/>
                     <Card.Body>
@@ -78,7 +75,7 @@ const News = () => {
                         <Button variant='primary' onClick={readMore} id='myButton_1'>Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card bg='light' text='muted' maxWidth='100px'>
+                <Card style={{maxHeight: '45em'}} bg='light' text='muted' maxWidth='100px'>
                     <Card.Img variant='top'
                               src='https://s.ill.in.ua/i/news/630x373/419/419952.png'/>
                     <Card.Body>
@@ -90,13 +87,13 @@ const News = () => {
                         <Button variant='primary' onClick={readMoreTwo} id='myButton_2'>Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card bg='warning' border='primary'>
+                <Card className={classes.cards} bg='warning' border='primary'>
                     <Card.Img variant='top'
                               src='https://img.championat.com/news/big/m/l/kto-skinet-s-trona-juventus-glavnye-intrigi-chempionata-italii_1440235598356310837.jpg'/>
                     <Card.Body>
                         <Card.Title>В Италии разработали протокол возрождения футбола</Card.Title>
                         <Card.Text>Федерация футбола Италии под руководством ее президента Габриэле Гравины и
-                            медицинская комиссия, входящая в нее, <span id='dotsTh'>...</span><span id='moreTh' style={{display:'none'}}> вместе со специально приглашенными специалистами в
+                            медицинская комиссия<span id='dotsTh'>...</span><span id='moreTh' style={{display:'none'}}>входящая в нее, вместе со специально приглашенными специалистами в
                             области эпидемиологии, разработали поэтапный протокол, представленный министру спорта
                             Винченцо Спадафоре, согласно которому должно проходить возрождение футбола в стране, за
                             который (или против которого) в среду, 22 апреля, проголосуют в режиме видеоконференции
