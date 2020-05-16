@@ -42,24 +42,10 @@ const Article = (props) => {
 
     const classes = useStyles();
     const [key, setKey] = useState('view');
-    // const [article, setArticle] = useState();
+
     const [area, setArea] = useState('');
     const [text, setText] = useState('');
-    setArea.value = '';
 
-// const area = downloadArticle();
-//
-//     function downloadArticle() {
-//             return <ReactMarkdown source={value} escapeHtml={false}/>
-//
-//         // return "**Hello**. This is article" + id;
-//     }
-
-    // function fetchArticle() {
-    //     const id = props.match.params.id;
-    //     const artice = downloadArticle(id);
-    //     setArticle(article)
-    // }
 
     useEffect(() => {
         localStorage.setItem('area', JSON.stringify(area))
@@ -75,8 +61,8 @@ const Article = (props) => {
         setText([
             ...text,
             p.innerHTML += <ReactMarkdown source={event.target.value} escapeHtml={false}/>
-            // setArea(<ReactMarkdown source={event.target.value} escapeHtml={false}/>)
-        ])
+        ]);
+        setArea('');
     };
 
    let p = document.getElementById('block')
