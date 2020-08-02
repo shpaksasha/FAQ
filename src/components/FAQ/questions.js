@@ -48,22 +48,22 @@ const Questions = () => {
             {
                 header: 'Лион помешал Роналду продлить голевую серию с начала 2020 года',
                 date: '13/1/2011',
-                id: "some-id-1"
+                id: "id-1"
             },
             {
                 header: 'УЕФА может остановить еврокубки из-за коронавируса. Известны подробности',
                 date: '14/1/2011',
-                id: "some-id-2"
+                id: "id-2"
             },
             {
                 header: 'Зидан - после поражения от Ман Сити: «Нам не хватило 10 минут»',
                 date: '15/1/2011',
-                id: "some-id-3"
+                id: "id-3"
             },
             {
                 header: 'Бенфика - Шахтер: онлайн трансляция матча 1/16 Лиги Европы',
                 date: '16/1/2011',
-                id: "some-id-4"
+                id: "id-4"
             },
         ];
 
@@ -94,7 +94,7 @@ const Questions = () => {
     function renderList(data) {
 
         const listItems = data.map((item) =>
-            <Link href={'/faq/article/' + item.id} key={item.id} style={{textDecoration: 'none', color: 'inherit'}}>
+            <Link href={'/faq/article/' + item.id} key={item.id} style={{textDecoration: 'none', color: 'primary'}}>
                 <ListItem button divider>
                     <ListItemText
                         primary={item.header}/>
@@ -110,7 +110,7 @@ const Questions = () => {
     function renderLoading() {
         return (
             <Container maxWidth='md' component='div' fixed className={classes.loading}>
-                <CircularProgress size={57}/>
+                <CircularProgress color="secondary" size={57}/>
             </Container>
         )
     }

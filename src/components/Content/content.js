@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from "../Slider/slider";
-import Blog from "../Blog/blog";
+import Slider from "./slider";
+import Blog from "./blog";
 
 const Content = () => {
     return (

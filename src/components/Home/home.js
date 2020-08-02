@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Nav, Row, Tab} from 'react-bootstrap';
-import {makeStyles} from '@material-ui/core/styles';
+import {formatMs, makeStyles} from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(theme => ({
@@ -26,9 +26,9 @@ const useStyles = makeStyles(theme => ({
 
 const Home = () => {
     const classes = useStyles();
-    const hours = new Date().getHours();
-    const min = new Date().getMinutes();
 
+    // const hours =new Date("2020-05-31 14:46:30").getHours() - new Date().getHours();
+    // const min = new Date("2015-05-31 14:46:30").getMinutes() - new Date().getMinutes();
     return (
         <Container>
             <Tab.Container defaultActiveKey='first'>
@@ -37,7 +37,7 @@ const Home = () => {
                         <h2>Актуальные новости</h2>
                         <Nav variant='pills' className='flex-column mt-4 justify-content-center'>
                             <Nav.Item>
-                                <div>{`${hours}:${min}`}</div>
+                                {/*<div>{`${hours}:${min}`}</div>*/}
                                 <Nav.Link className={classes.link} eventKey='first'>Лион - Ювентус: букмекеры ожидают
                                     победу гостей и голы от Роналду</Nav.Link>
                             </Nav.Item>

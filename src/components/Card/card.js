@@ -5,7 +5,6 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
 
-
 }));
 
 const News = () => {
@@ -62,8 +61,8 @@ const News = () => {
     return (
         <Container>
             <h2 className='text-center mt-4'>Football news 24 chanel</h2>
-            <CardDeck  style={{height:'auto'}} className='mt-5'>
-                <Card style={{maxHeight: '35em'}} bg='info' border='warning' >
+            <CardDeck style={{height: 'auto'}} className='mt-5'>
+                <Card style={{maxHeight: '35em'}} bg='info' border='warning'>
                     <Card.Img variant='top'
                               src='https://img.championat.com/s/735x490/news/big/d/h/rashford-trebuet-ot-mju-zarplatu-vyshe-chem-u-pogba_1560698990492807713.jpg'/>
                     <Card.Body>
@@ -81,8 +80,9 @@ const News = () => {
                     <Card.Body>
                         <Card.Title>АПЛ вряд ли возобновится до 8 июня — Sky Sports</Card.Title>
                         <Card.Text>Клубы английской Премьер-лиги по-прежнему намерены завершить нынешний сезон, который
-                            взял бессрочную паузу из-за пандемии коронавируса,<span id='dotsT'>...</span><span id='moreT'
-                                                                                                             style={{display: 'none'}}> но предложение о завершении кампании к 30 июня даже не рассматривалось на их встрече 17 апреля. Об этом сообщает Sky Sports.
+                            взял бессрочную паузу из-за пандемии коронавируса,<span id='dotsT'>...</span><span
+                                id='moreT'
+                                style={{display: 'none'}}> но предложение о завершении кампании к 30 июня даже не рассматривалось на их встрече 17 апреля. Об этом сообщает Sky Sports.
                             По информации источника, представители всех клубов высшего английского дивизиона и руководство лиги провели совместную беседу по видеосвязи, во время которой рассмотрели различные варианты решения данной проблемы.</span></Card.Text>
                         <Button variant='primary' onClick={readMoreTwo} id='myButton_2'>Read more</Button>
                     </Card.Body>
@@ -93,11 +93,12 @@ const News = () => {
                     <Card.Body>
                         <Card.Title>В Италии разработали протокол возрождения футбола</Card.Title>
                         <Card.Text>Федерация футбола Италии под руководством ее президента Габриэле Гравины и
-                            медицинская комиссия<span id='dotsTh'>...</span><span id='moreTh' style={{display:'none'}}>входящая в нее, вместе со специально приглашенными специалистами в
+                            медицинская комиссия<span id='dotsTh'>...</span><span id='moreTh' style={{display: 'none'}}>входящая в нее, вместе со специально приглашенными специалистами в
                             области эпидемиологии, разработали поэтапный протокол, представленный министру спорта
                             Винченцо Спадафоре, согласно которому должно проходить возрождение футбола в стране, за
                             который (или против которого) в среду, 22 апреля, проголосуют в режиме видеоконференции
-                                представители всех лиг Италии — сообщает <a href='https://www.campionando.it/fixture-detail.php?id=859552'>Campionando.it</a></span></Card.Text>
+                                представители всех лиг Италии — сообщает <a
+                                    href='https://www.campionando.it/fixture-detail.php?id=859552'>Campionando.it</a></span></Card.Text>
                         <Button variant='primary' onClick={readMoreThree} id='myButton_3'>Read more</Button>
                     </Card.Body>
                 </Card>

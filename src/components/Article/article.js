@@ -34,6 +34,10 @@ const useStyles = makeStyles(theme => ({
         display: 'inline',
         top: '425px',
         right: '920px'
+    },
+    view: {
+        textAlign: 'center',
+        position: 'absolute'
     }
 }));
 
@@ -43,16 +47,17 @@ const Article = (props) => {
     const classes = useStyles();
     const [key, setKey] = useState('view');
 
-    const [area, setArea] = useState('');
+    const [area, setArea] = useState([]);
     const [text, setText] = useState('');
 
 
     useEffect(() => {
-        localStorage.setItem('area', JSON.stringify(area))
+        localStorage.setItem('area', '')
     }, [area]);
+    // console.log(localStorage);
 
     useEffect(() => {
-        const raw = localStorage.getItem('area') || [];
+        const raw = localStorage.getItem( JSON.stringify(area));
         setArea(JSON.parse(raw))
     }, []);
 
@@ -65,33 +70,37 @@ const Article = (props) => {
         setArea('');
     };
 
-   let p = document.getElementById('block')
+    let p = document.getElementById('block')
     return (
         <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
             <Tab eventKey="view" title="View">
                 <Container maxWidth='md' component='div' fixed className={classes.root}>
-                    <div id='block'>Привет{setText}</div>
+                            <div  id='block' className={classes.view}>Привет Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Alias aliquid amet blanditiis ducimus eveniet impedit iste iusto
+                                laboriosam minus molestiae nobis obcaecati optio porro quam quis reiciendis, repudiandae
+                                tenetur? Aperiam, architecto cupiditate in laboriosam neque quidem sed sit temporibus
+                                vero. {setText}</div>
                 </Container>
             </Tab>
 
             <Tab eventKey="edit" title="Edit">
-                <TextareaAutosize
-                    cols='40'
-                    rows='8'
-                    aria-label="empty textarea"
-                    placeholder="empty textarea"
-                    value={area}
-                    onChange={event => setArea(event.target.value)}
-                    className={classes.area}
-                />
+                            <TextareaAutosize
+                                cols='40'
+                                rows='8'
+                                aria-label="empty textarea"
+                                placeholder="empty textarea"
+                                value={area}
+                                onChange={event => setArea(event.target.value)}
+                                className={classes.area}
+                            />
 
-                <input type='submit'
-                       onClick={addText}
-                       className={classes.submit}
-                />
+                            <input type='submit'
+                                   onClick={addText}
+                                   className={classes.submit}
+                            />
             </Tab>
         </Tabs>
-);
+    );
 };
 
 export default Article;
