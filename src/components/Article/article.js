@@ -24,17 +24,21 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         marginTop: '350px',
     },
-   submit:{
-        border:'none',
-       backgroundColor: '#1e88e5',
-       color: '#ffffff',
-       padding:'8px',
-       borderRadius: '4px',
-       position:'absolute',
-       display:'inline',
-       top:'425px',
-       right:'920px'
-   }
+    submit: {
+        border: 'none',
+        backgroundColor: '#1e88e5',
+        color: '#ffffff',
+        padding: '8px',
+        borderRadius: '4px',
+        position: 'absolute',
+        display: 'inline',
+        top: '425px',
+        right: '920px'
+    },
+    view: {
+        textAlign: 'center',
+        position: 'absolute'
+    }
 }));
 
 
@@ -42,71 +46,61 @@ const Article = (props) => {
 
     const classes = useStyles();
     const [key, setKey] = useState('view');
-    // const [article, setArticle] = useState();
-const [area, setArea] = useState('');
-const [text, setText]= useState('');
 
-// const area = downloadArticle();
-//
-//     function downloadArticle() {
-//             return <ReactMarkdown source={value} escapeHtml={false}/>
-//
-//         // return "**Hello**. This is article" + id;
-//     }
+    const [area, setArea] = useState([]);
+    const [text, setText] = useState('');
 
-    // function fetchArticle() {
-    //     const id = props.match.params.id;
-    //     const artice = downloadArticle(id);
-    //     setArticle(article)
-    // }
 
     useEffect(() => {
-        localStorage.setItem('area', JSON.stringify(area))
+        localStorage.setItem('area', '')
     }, [area]);
+    // console.log(localStorage);
 
-    useEffect(()=>{
-        const raw = localStorage.getItem('area') || [];
+    useEffect(() => {
+        const raw = localStorage.getItem( JSON.stringify(area));
         setArea(JSON.parse(raw))
     }, []);
 
 
-    const addText =(event) =>{
-setText([
-    ...text,
-    // setArea(event.target.value)
-    setArea(<ReactMarkdown source={event.target.value} escapeHtml={false}/>)
-])};
+    const addText = (event) => {
+        setText([
+            ...text,
+            p.innerHTML += <ReactMarkdown source={event.target.value} escapeHtml={false}/>
+        ]);
+        setArea('');
+    };
 
+    let p = document.getElementById('block')
+    return (
+        <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
+            <Tab eventKey="view" title="View">
+                <Container maxWidth='md' component='div' fixed className={classes.root}>
+                            <div  id='block' className={classes.view}>Привет Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Alias aliquid amet blanditiis ducimus eveniet impedit iste iusto
+                                laboriosam minus molestiae nobis obcaecati optio porro quam quis reiciendis, repudiandae
+                                tenetur? Aperiam, architecto cupiditate in laboriosam neque quidem sed sit temporibus
+                                vero. {setText}</div>
+                </Container>
+            </Tab>
 
-    // function onTextChange(event) {
-    //         setArea(event.target.value);
-    // }
+            <Tab eventKey="edit" title="Edit">
+                            <TextareaAutosize
+                                cols='40'
+                                rows='8'
+                                aria-label="empty textarea"
+                                placeholder="empty textarea"
+                                value={area}
+                                onChange={event => setArea(event.target.value)}
+                                className={classes.area}
+                            />
 
-        return (
-            <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
-                <Tab eventKey="view" title="View">
-                    <Container maxWidth='md' component='div' fixed className={classes.root}>
-                        {setText}
-                    </Container>
-                </Tab>
-                <Tab eventKey="edit" title="Edit">
-                    <TextareaAutosize
-                        cols='40'
-                        rows='8'
-                        aria-label="empty textarea"
-                        placeholder="empty textarea"
-                        value={area}
-                        onChange={event => setArea(event.target.value)}
-                        className={classes.area}
-                    />
-
-                    <input type='submit'
-                           onClick={addText}
-                           className={classes.submit}
-                           />
-                </Tab>
-            </Tabs>
-        );
+                            <input type='submit'
+                                   onClick={addText}
+                                   className={classes.submit}
+                            />
+            </Tab>
+        </Tabs>
+    );
 };
 
 export default Article;

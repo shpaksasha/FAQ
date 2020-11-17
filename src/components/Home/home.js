@@ -26,8 +26,6 @@ const useStyles = makeStyles(theme => ({
 
 const Home = () => {
     const classes = useStyles();
-    const hours = new Date().getHours();
-    const min = new Date().getMinutes();
 
     return (
         <Container>
@@ -37,7 +35,7 @@ const Home = () => {
                         <h2>Актуальные новости</h2>
                         <Nav variant='pills' className='flex-column mt-4 justify-content-center'>
                             <Nav.Item>
-                                <div>{`${hours}:${min}`}</div>
+                                {/*<div>{`${hours}:${min}`}</div>*/}
                                 <Nav.Link className={classes.link} eventKey='first'>Лион - Ювентус: букмекеры ожидают
                                     победу гостей и голы от Роналду</Nav.Link>
                             </Nav.Item>
