@@ -54,7 +54,7 @@ const Article = (props) => {
     useEffect(() => {
         localStorage.setItem('area', '')
     }, [area]);
-    // console.log(localStorage);
+
 
     useEffect(() => {
         const raw = localStorage.getItem( JSON.stringify(area));
