@@ -13,7 +13,6 @@ const prom = new Promise(function (resolve, reject) {
 })
 
 prom.then((data) => {
-    // console.log('promise resolve', data);
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             data.modified = true;

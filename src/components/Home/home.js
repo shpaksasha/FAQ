@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Nav, Row, Tab} from 'react-bootstrap';
-import {formatMs, makeStyles} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(theme => ({
@@ -27,8 +27,6 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
     const classes = useStyles();
 
-    // const hours =new Date("2020-05-31 14:46:30").getHours() - new Date().getHours();
-    // const min = new Date("2015-05-31 14:46:30").getMinutes() - new Date().getMinutes();
     return (
         <Container>
             <Tab.Container defaultActiveKey='first'>

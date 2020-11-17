@@ -18,7 +18,6 @@ const App = () =>{
             <Route exact path='/football' component={News}/>
             <Route exact path='/content' component={Content}/>
             <Route exact path='/about' component={About}/>
-            {/*<Route exact path='/faq/article_1' component={One}/>*/}
             <Route exact path="/faq/article/:id" render={(props) => <Article {...props} />}/>
         </Router>
     );

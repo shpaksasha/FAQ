@@ -5,7 +5,6 @@ yarn-error.log*
 
 # No mac stuff
 .DS_Store
-
 # No vscode stuff
 .vscode
 
