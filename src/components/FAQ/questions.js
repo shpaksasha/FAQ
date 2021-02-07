@@ -38,7 +38,8 @@ const Questions = () => {
 
     if (items) {
         return renderList(items);
-    } else {
+    }
+    else {
         return renderLoading();
     }
 
