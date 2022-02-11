@@ -22,7 +22,6 @@ const Header = () => {
                         <Nav.Link href='/'>Home</Nav.Link>
                         <Nav.Link href='/content'>Content</Nav.Link>
                         <Nav.Link href='/faq'>FAQ</Nav.Link>
-                        <Nav.Link href='/about'>AboutUs</Nav.Link>
                         <Nav.Link href='/football'>Football</Nav.Link>
                     </Nav>
                     <Form inline>

@@ -6,10 +6,9 @@ import Questions from './components/FAQ/questions';
 import Article from './components/Article/article';
 import News from './components/Card/card';
 import Content from './components/Content/content';
-import About from './components/About /about';
 
 
-export default function App () {
+const App = () => {
     return (
         <Fragment>
             <Header/>
@@ -17,8 +16,10 @@ export default function App () {
             <Route exact path='/faq' component={Questions}/>
             <Route exact path='/football' component={News}/>
             <Route exact path='/content' component={Content}/>
-            <Route exact path='/about' component={About}/>
             <Route exact path="/faq/article/:id" render={(props) => <Article {...props} />}/>
         </Fragment>
     );
 };
+
+
+export default App
