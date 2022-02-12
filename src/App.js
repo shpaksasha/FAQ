@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 import Header from './pages/Header/header';
 import {Route} from 'react-router-dom';
-import Home from './components/Home/home';
-import Questions from './components/FAQ/questions';
+import Home from './pages/Home/home';
+import Questions from './pages/FAQ/questions';
 import Article from './components/Article/article';
 import News from './components/Card/card';
 import Content from './components/Content/content';
